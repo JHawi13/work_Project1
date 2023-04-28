@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+}
+@font-face {
+    font-family: 'Sigmar', cursive;
+    src: url("https://fonts.googleapis.com/css2?family=Sigmar&display=swap");
+}
+body{
+    background-color: #6C9BCF;
+}
+#left_heading{
+    font-family: 'Roboto', sans-serif;
+}
+#left_heading span{
+    font-family: 'Sigmar', cursive;
+    font-weight: 600;
+    font-size: x-large;
+}
 #Header div{
     margin-left: 3cm;
     padding-top: 1cm;
@@ -8,4 +27,7 @@ nav ul  {
 }
 nav ul li{
     margin-left: 1.5cm;
+}
+.The_Grid_Items{
+    background-attachment: fixed;
 }
