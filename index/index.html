@@ -7,6 +7,7 @@
   <div id="cascadeicon">
     <img src="images/cascadekitchen.jpeg" alt="This is cascade icon">
   </div>
+ 
   <div id="Navigation_bar">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; </a>
@@ -40,37 +41,60 @@
       <div class="slideshow-container">
 
         <div class="mySlides fade">
-          <div class="numbertext">1 / 3</div>
+          <div class="numbertext">1 / 6</div>
           <img src="images/1dcb1b13-db93-4f7f-8028-742939917b08.jpg" style="width:35.5cm;height:15cm">
           <div class="text">Caption Text</div>
         </div>
         
         <div class="mySlides fade">
-          <div class="numbertext">2 / 3</div>
+          <div class="numbertext">2 / 6</div>
           <img src="images/410814e7-d48f-447b-ab0e-fd78903a50a9.jpg" style="width:35.5cm;height:15cm">
           <div class="text">Caption Two</div>
         </div>
         
         <div class="mySlides fade">
-          <div class="numbertext">3 / 3</div>
+          <div class="numbertext">3 / 6</div>
           <img src="images/4c8febf1-f2f8-4c66-a51a-19ba29782f46.jpg" style="width:35.5cm;height:15cm">
           <div class="text">Caption Three</div>
         </div>
         
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 6</div>
+          <img src="images/5e6a214c-8e6b-4d8a-9420-5b82ec0b7eee.jpg" style="width:35.5cm;height:15cm">
+          <div class="text">Caption four</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 6</div>
+          <img src="images/8a7f9c53-05fa-49c4-b10c-1e002ff2964e.jpg" style="width:35.5cm;height:15cm">
+          <div class="text">Caption five</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">6 / 6</div>
+          <img src="images/menu.jpg" style="width:35.5cm;height:15cm">
+          <div class="text">Caption six</div>
+        </div>
+
         </div>
         <br>
-        
-        <div style="text-align:center">
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-        </div>
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+            <br>
+
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)"></span> 
+              <span class="dot" onclick="currentSlide(5)"></span> 
+              <span class="dot" onclick="currentSlide(6)"></span> 
+            </div>
         
         <script>
         let slideIndex = 0;
-        showSlides();
-        
-        function showSlides() {
+        showSlidesa();
+        function showSlidesa() {
           let i;
           let slides = document.getElementsByClassName("mySlides");
           let dots = document.getElementsByClassName("dot");
@@ -84,52 +108,74 @@
           }
           slides[slideIndex-1].style.display = "block";  
           dots[slideIndex-1].className += " active";
-          setTimeout(showSlides, 2000); // Change image every 2 seconds
+          setTimeout(showSlidesa, 2000); // Change image every 2 seconds
+        }
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          showSlidesa();
         }
         </script>
         </div>
         <div id="EventsInfo">
-         <p>Introducing Cascade: A Culinary Haven for Food Enthusiasts
-
-          Cascade is a remarkable restaurant that combines gastronomic excellence, captivating ambiance, and exceptional service. With a focus on fresh, locally-sourced ingredients, our talented chefs create delectable dishes that are both visually stunning and delicious. Our elegantly designed space provides the perfect setting for any occasion, whether it's a romantic dinner, business lunch, or family celebration. At Cascade, we pride ourselves on our commitment to exceptional service, ensuring that every moment spent with us is memorable. Join us for special events, indulge in our chef's tasting menu, and explore our carefully curated wine list. Book your table today and embark on a culinary journey at Cascade, where unforgettable dining experiences await.
+         <p>Introducing Cascade: A Culinary Haven for Food Enthusiasts.Cascade is a remarkable restaurant that combines gastronomic excellence, captivating ambiance, and exceptional service. With a focus on fresh, locally-sourced ingredients, our talented chefs create delectable dishes that are both visually stunning and delicious. Our elegantly designed space provides the perfect setting for any occasion, whether it's a romantic dinner, business lunch, or family celebration. At Cascade, we pride ourselves on our commitment to exceptional service, ensuring that every moment spent with us is memorable. Join us for special events, indulge in our chef's tasting menu, and explore our carefully curated wine list. Book your table today and embark on a culinary journey at Cascade, where unforgettable dining experiences await.
         </p>
     </div>
     </div>
   </div>
  
-  <div id="Contact">
-    <section class="contact-section">
-      <div class="contact-overlay"></div>
-      <div class="contact-content">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-icons">
-          <div class="contact-icon">
-            <a href="#" class="contact-link">
-              <i class="fas fa-phone contact-icon"></i>
-              <span class="contact-handle">+2547123456789</span>
-            </a>
-          </div>
-          <div class="contact-icon">
-            <a href="#" class="contact-link">
-              <i class="fas fa-envelope contact-icon"></i>
-              <span class="contact-handle">mail@mail.com</span>
-            </a>
-          </div>
-          <div class="contact-icon">
-            <a href="#" class="contact-link">
-              <i class="fab fa-twitter contact-icon"></i>
-              <span class="contact-handle">@tweetmaster</span>
-            </a>
-          </div>
-          <div class="contact-icon">
-            <a href="#" class="contact-link">
-              <i class="fab fa-instagram contact-icon"></i>
-              <span class="contact-handle">@iggoat</span>
-            </a>
-          </div>
+  <section class="contact-section">
+    <div class="contact-overlay"></div>
+    <div class="contact-content">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-icons">
+        <div class="contact-icon">
+          <a href="#" class="contact-link">
+            <i class="fas fa-phone contact-icon"></i>
+            <span class="contact-handle">+2547123456789</span>
+          </a>
+        </div>
+        <div class="contact-icon">
+          <a href="#" class="contact-link">
+            <i class="fas fa-envelope contact-icon"></i>
+            <span class="contact-handle">mail@mail.com</span>
+          </a>
+        </div>
+        <div class="contact-icon">
+          <a href="#" class="contact-link">
+            <i class="fab fa-twitter contact-icon"></i>
+            <span class="contact-handle">@tweetmaster</span>
+          </a>
+        </div>
+        <div class="contact-icon">
+          <a href="#" class="contact-link">
+            <i class="fab fa-instagram contact-icon"></i>
+            <span class="contact-handle">@iggoat</span>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+  
   </div>
 </body>
  
